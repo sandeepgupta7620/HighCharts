@@ -1,0 +1,99 @@
+<div *ngIf="isLoading" class="loading-spinner">
+  Loading charts...
+</div>
+
+<div *ngIf="!isLoading" class="charts-container">
+  
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="goToTables()"
+    class="bg-cyan-500 text-white mb-5 px-4 py-2 rounded hover:bg-cyan-600">
+    View in Tabular Format
+  </button>
+
+  <!-- Chart 1: Year by Movie/Series Count -->
+  <div class="chart-wrapper">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+          <h2>Year by Movie/Series Count</h2>
+          
+          <mat-form-field appearance="fill" class="chart-type-dropdown">
+              <mat-label>Select Chart Type</mat-label>
+              <mat-select [(value)]="selectedChartType1" (selectionChange)="onChartTypeChange1($event.value)">
+                  <mat-option value="column">Bar Chart</mat-option>
+                  <mat-option value="pie">Pie Chart</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions1" style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+  </div>
+
+  <!-- Chart 2: Year-wise Avg IMDB Rating -->
+  <div class="chart-wrapper">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+          <h2>Year-wise Avg IMDB Rating</h2>
+          
+          <mat-form-field appearance="fill" class="chart-type-dropdown">
+              <mat-label>Select Chart Type</mat-label>
+              <mat-select [(value)]="selectedChartType2" (selectionChange)="onChartTypeChange2($event.value)">
+                  <mat-option value="line">Line Chart</mat-option>
+                  <mat-option value="pie">Pie Chart</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions2" style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+  </div>
+
+  <!-- Chart 3: Genre-wise Avg Runtime -->
+  <div class="chart-wrapper">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+          <h2>Genre-wise Avg Runtime</h2>
+          
+          <mat-form-field appearance="fill" class="chart-type-dropdown">
+              <mat-label>Select Chart Type</mat-label>
+              <mat-select [(value)]="selectedChartType3" (selectionChange)="onChartTypeChange3($event.value)">
+                  <mat-option value="bar">Bar Chart</mat-option>
+                  <mat-option value="line">Line Chart</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions3" style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+  </div>
+
+  <!-- Chart 4: Year on Year Runtime Change -->
+  <div class="chart-wrapper">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+          <h2>Year on Year Runtime Change</h2>
+          
+          <mat-form-field appearance="fill" class="chart-type-dropdown">
+              <mat-label>Select Chart Type</mat-label>
+              <mat-select [(value)]="selectedChartType4" (selectionChange)="onChartTypeChange4($event.value)">
+                  <mat-option value="line">Line Chart</mat-option>
+                  <mat-option value="pie">Pie Chart</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions4" style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+  </div>
+
+  <!-- Chart 5: Year on Year Genre & Language Runtime Change -->
+  <div class="chart-wrapper">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+          <h2>Year on Year Genre & Language Runtime Change</h2>
+          
+          <mat-form-field appearance="fill" class="chart-type-dropdown">
+              <mat-label>Select Chart Type</mat-label>
+              <mat-select [(value)]="selectedChartType5" (selectionChange)="onChartTypeChange5($event.value)">
+                  <mat-option value="column">Column Chart</mat-option>
+                  <mat-option value="line">Line Chart</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions5" style="width: 100%; height: 400px; display: block;">
+      </highcharts-chart>
+  </div>
+</div>

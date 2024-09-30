@@ -1,0 +1,18 @@
+.charts-container {
+    padding: 20px; // Padding for the entire container
+  }
+  
+  .chart-wrapper {
+    border: 1px solid #ccc; // Light grey border around each chart
+    border-radius: 8px; // Rounded corners
+    margin: 15px 0; // Margin between charts
+    padding: 20px; // Padding inside each chart wrapper
+    background-color: #f9f9f9; // Light background color for charts
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    font-size: 24px;
+    margin: 50px 0;
+  }
+  
